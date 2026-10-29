@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Southface.ap — Personal Branding &amp; Digital Growth Agency</title>
+<meta name="description" content="Southface.ap builds personal brands through strategy, storytelling and cinematic content for founders, professionals and businesses. Based in Tamil Nadu, India.">
+<meta property="og:title" content="Southface.ap — Build a personal brand that stands out">
+<meta property="og:description" content="Strategy. Authority. Trust. A personal branding and creative agency from Tamil Nadu.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0b;--bg2:#141416;--line:#2a2a2d;--tx:#f4f1ea;--mut:#a39f95;--gold:#d4b483;--gold2:#8f7447;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--tx);font:300 1rem/1.7 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:300;line-height:1.05;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+section{padding:clamp(4.5rem,11vw,9rem) 0;position:relative}
+h2{font-size:clamp(2rem,5.5vw,4rem);max-width:18ch}
+.lead{color:var(--mut);max-width:58ch}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);background:linear-gradient(#0a0a0bee,#0a0a0b00);backdrop-filter:blur(6px)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{font-family:Fraunces,serif;font-size:1.3rem;text-decoration:none}.logo b{color:var(--gold);font-weight:500}
+.links{display:flex;gap:2rem;font-size:.85rem}.links a{text-decoration:none;color:var(--mut);transition:color .3s}.links a:hover{color:var(--gold)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--tx);padding:.5rem .9rem;border-radius:99px;font:inherit;cursor:pointer}
+@media(max-width:820px){.burger{display:block}.links{position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:center;align-items:center;font-size:1.6rem;font-family:Fraunces,serif;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1)}.links.open{transform:none}.links a{color:var(--tx)}.burger{position:relative;z-index:2}}
+/* buttons */
+.btn{display:inline-block;padding:1rem 1.8rem;border-radius:99px;text-decoration:none;font-size:.8rem;letter-spacing:.14em;border:1px solid var(--gold);cursor:pointer;font-family:inherit;transition:background .4s,color .4s,transform .3s}
+.btn.p{background:var(--gold);color:#17130b}.btn.p:hover{background:transparent;color:var(--gold)}
+.btn.s{background:transparent;color:var(--tx);border-color:var(--line)}.btn.s:hover{border-color:var(--gold);color:var(--gold)}
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding:8rem 0 4rem;overflow:hidden;background:radial-gradient(60% 50% at 75% 35%,#2a2113 0,transparent 70%),radial-gradient(40% 40% at 10% 90%,#1b1b1f 0,transparent 70%)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.7}
+.lens{position:absolute;right:-8%;top:50%;width:min(60vw,640px);translate:0 -50%;opacity:.9;will-change:transform}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(2.6rem,8.5vw,6.8rem);max-width:12ch;text-transform:uppercase}
+.hero p{max-width:50ch;color:var(--mut);margin:1.6rem 0}
+.pill{display:flex;gap:1.5rem;font-family:Fraunces,serif;color:var(--gold);font-size:1.1rem;margin-bottom:2rem;letter-spacing:.2em}
+.cta{display:flex;gap:1rem;flex-wrap:wrap}
+.hero h1 span{display:inline-block;opacity:0;transform:translateY(40px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+/* loader */
+#load{position:fixed;inset:0;background:var(--bg);z-index:100;display:grid;place-items:center;transition:opacity .7s,visibility .7s}
+#load.done{opacity:0;visibility:hidden}
+#load i{display:block;height:1px;width:0;background:var(--gold);margin-top:1rem;animation:bar 1s ease forwards}
+@keyframes bar{to{width:100%}}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+/* about */
+.about{display:grid;gap:3rem;grid-template-columns:1fr 1fr}
+.about p{color:var(--mut)}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.pillars div{border:1px solid var(--line);padding:1.6rem;border-radius:4px;background:linear-gradient(160deg,var(--bg2),var(--bg));transition:border-color .4s}
+.pillars div:hover{border-color:var(--gold)}
+.pillars h3{font-size:1.3rem;margin-bottom:.4rem}.pillars small{color:var(--mut)}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+/* services */
+.grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));margin-top:3.5rem}
+.card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:4px;background:var(--bg2);min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;padding:1.6rem;transition:border-color .5s,transform .5s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 80% 0,var(--g,#3a2e18),transparent 70%);transition:transform .8s,opacity .5s;opacity:.8}
+.card:hover{border-color:var(--gold);transform:translateY(-4px)}.card:hover::before{transform:scale(1.25)}
+.card>*{position:relative}
+.card svg{position:absolute;top:1.4rem;right:1.4rem;width:44px;height:44px;stroke:var(--gold);fill:none;stroke-width:1}
+.card .n{font-family:Fraunces,serif;color:var(--gold);font-size:.95rem}
+.card h3{font-size:1.45rem;margin:.3rem 0 .6rem}.card p{margin:0;color:var(--mut);font-size:.9rem}
+/* work */
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:2.5rem 0}
+.filters button{background:none;border:1px solid var(--line);color:var(--mut);padding:.45rem 1rem;border-radius:99px;font:inherit;font-size:.8rem;cursor:pointer;transition:.3s}
+.filters button[aria-pressed=true],.filters button:hover{border-color:var(--gold);color:var(--gold)}
+.masonry{columns:3 280px;column-gap:1.25rem}
+.work{break-inside:avoid;margin-bottom:1.25rem;position:relative;overflow:hidden;border-radius:4px;border:1px solid var(--line);background:var(--bg2)}
+.work .art{aspect-ratio:var(--r,4/5);background:var(--bg2);overflow:hidden}
+.work svg.a{width:100%;height:100%;display:block;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.work:hover svg.a{transform:scale(1.08)}
+.work .t{padding:1.2rem 1.3rem 1.4rem}
+.work .c{color:var(--gold);font-size:.78rem}.work h3{font-size:1.25rem;margin:.2rem 0 .4rem}.work p{margin:0 0 .8rem;color:var(--mut);font-size:.88rem}
+.work a{font-size:.8rem;color:var(--gold)}
+.tag{position:absolute;top:.8rem;left:.8rem;background:#0a0a0bcc;border:1px solid var(--line);font-size:.7rem;padding:.2rem .7rem;border-radius:99px;color:var(--mut)}
+.note{color:var(--mut);font-size:.85rem;margin-top:2rem}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:4rem;position:relative}
+.steps::before{content:"";position:absolute;top:22px;left:0;height:1px;width:100%;background:var(--line)}
+.steps::after{content:"";position:absolute;top:22px;left:0;height:1px;width:var(--p,0%);background:var(--gold);transition:width 1.8s cubic-bezier(.3,.7,.2,1)}
+.step{position:relative;padding-top:4rem}
+.step b{position:absolute;top:0;left:0;width:44px;height:44px;border-radius:50%;background:var(--bg);border:1px solid var(--gold);display:grid;place-items:center;font:500 .95rem Fraunces,serif;color:var(--gold);z-index:1}
+.step h3{font-size:1.4rem;margin-bottom:.5rem}.step p{color:var(--mut);font-size:.9rem;margin:0}
+@media(max-width:820px){.steps{grid-template-columns:1fr;gap:2.5rem}.steps::before,.steps::after{width:1px;height:100%;left:22px;top:0}.steps::after{height:var(--p,0%);width:1px}.step{padding:0 0 0 4.2rem}}
+/* philosophy */
+.phil{background:radial-gradient(50% 60% at 50% 50%,#211a0e,var(--bg) 75%);text-align:center}
+.phil h2{max-width:none;font-size:clamp(2.2rem,8vw,6.2rem);text-transform:uppercase}
+.phil h2 span{display:block}.phil h2 span:nth-child(2){color:var(--gold)}.phil h2 span:nth-child(3){-webkit-text-stroke:1px var(--tx);color:transparent}
+.phil p{margin:2.5rem auto 0;max-width:60ch;color:var(--mut)}
+/* why */
+.why .grid{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+.why .card{min-height:200px;justify-content:flex-start}
+/* contact */
+.contact{background:linear-gradient(var(--bg),#13100a)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem}
+@media(max-width:820px){.cgrid{grid-template-columns:1fr;gap:3rem}}
+.info{border-left:1px solid var(--gold);padding-left:1.4rem;margin:2rem 0}.info b{font:300 1.6rem Fraunces,serif;display:block}
+form{display:grid;gap:1.1rem}
+label{font-size:.8rem;color:var(--mut);display:grid;gap:.4rem}
+input,select,textarea{background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--tx);font:inherit;padding:.6rem 0;border-radius:0;width:100%}
+select option{background:var(--bg2)}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--gold)}
+.err{color:#e8a089;font-size:.78rem;min-height:1em}
+#ok{display:none;border:1px solid var(--gold);padding:1.2rem;border-radius:4px}
+footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--mut);font-size:.8rem;text-align:center}
+/* cursor */
+#cur{position:fixed;left:0;top:0;width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;pointer-events:none;z-index:200;opacity:0;transition:width .3s,height .3s,opacity .3s,background .3s;translate:-50% -50%}
+#cur.h{width:64px;height:64px;background:#d4b48322}
+@media(pointer:coarse){#cur{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv,.hero h1 span{opacity:1;transform:none}#cur{display:none}}
+</style>
+</head>
+<body>
+<div id="load"><div><div class="logo">South<b>face</b>.ap</div><i></i></div></div>
+<div id="cur"></div>
+
+<nav aria-label="Main"><div class="wrap">
+<a class="logo" href="#home">South<b>face</b>.ap</a>
+<button class="burger" aria-expanded="false" aria-controls="links">Menu</button>
+<div class="links" id="links"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#work">Our Work</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
+</div></nav>
+
+<main>
+<header class="hero" id="home">
+<canvas id="fx" aria-hidden="true"></canvas>
+<svg class="lens" id="lens" viewBox="0 0 600 600" aria-hidden="true">
+<defs><radialGradient id="lg" cx=".4" cy=".35"><stop offset="0" stop-color="#d4b483" stop-opacity=".5"/><stop offset=".4" stop-color="#3a2e18" stop-opacity=".5"/><stop offset="1" stop-color="#0a0a0b"/></radialGradient>
+<linearGradient id="ray" x1="0" x2="1"><stop offset="0" stop-color="#d4b483" stop-opacity=".35"/><stop offset="1" stop-color="#d4b483" stop-opacity="0"/></linearGradient></defs>
+<path d="M300 300 L600 120 L600 200Z M300 300 L600 330 L600 380Z" fill="url(#ray)"/>
+<g fill="none" stroke="#d4b483"><circle cx="300" cy="300" r="270" stroke-opacity=".25"/><circle cx="300" cy="300" r="225" stroke-opacity=".35"/><circle cx="300" cy="300" r="150" fill="url(#lg)" stroke-opacity=".6"/><circle cx="300" cy="300" r="70" stroke-opacity=".5"/>
+<g stroke-opacity=".18"><path d="M300 30V570M30 300H570M110 110L490 490M490 110L110 490"/></g></g>
+<circle cx="250" cy="250" r="14" fill="#f4f1ea" opacity=".35"/>
+</svg>
+<div class="wrap">
+<div class="pill" aria-label="Strategy, Authority, Trust"><span>STRATEGY.</span><span>AUTHORITY.</span><span>TRUST.</span></div>
+<h1 id="h1">Build a personal brand that stands out.</h1>
+<p>We transform expertise, ideas, and ambition into powerful digital identities through strategic storytelling, high-impact content, and creative execution.</p>
+<div class="cta"><a class="btn p" href="#contact">LET’S BUILD YOUR BRAND</a><a class="btn s" href="#work">EXPLORE OUR WORK</a></div>
+</div>
+</header>
+
+<section id="about"><div class="wrap about">
+<div class="rv"><h2>We don’t just create content. We build digital identities.</h2></div>
+<div class="rv" style="--d:.15s">
+<p>Southface.ap is a personal branding and creative strategy agency focused on helping entrepreneurs, founders, professionals, and businesses build a strong digital presence.</p>
+<p>We combine content strategy, scripting, visual storytelling, editing, design, and social media management to create content with a clear purpose.</p>
+<p>Our focus goes beyond posting consistently. We aim to communicate expertise, strengthen professional authority, and build lasting audience trust.</p>
+<div class="pillars"><div><h3>Strategy</h3><small>Positioning before production</small></div><div><h3>Storytelling</h3><small>Scripts with a point of view</small></div><div><h3>Creative Execution</h3><small>Edited, designed, consistent</small></div><div><h3>Digital Authority</h3><small>Expertise people can see</small></div></div>
+</div></div></section>
+
+<section id="services"><div class="wrap">
+<h2 class="rv">Nine services. One clear strategy.</h2>
+<div class="grid" id="sv"></div>
+</div></section>
+
+<section id="work"><div class="wrap">
+<h2 class="rv">Our work</h2>
+<p class="lead">Editorial case studies, arranged by discipline.</p>
+<div class="filters" id="flt" role="group" aria-label="Filter projects"></div>
+<div class="masonry" id="wk"></div>
+<p class="note">These are placeholder projects. To add real work, edit the <code>PROJECTS</code> list at the top of the page script: set <code>title</code>, <code>desc</code>, <code>img</code> (an image URL) and <code>link</code>, and remove <code>placeholder:true</code>.</p>
+</div></section>
+
+<section id="process"><div class="wrap">
+<h2 class="rv">From strategy to execution.</h2>
+<div class="steps" id="st">
+<div class="step"><b>01</b><h3>Discover</h3><p>Understand the client’s goals, audience, expertise, competitors, and current digital presence.</p></div>
+<div class="step"><b>02</b><h3>Strategise</h3><p>Develop positioning, content pillars, communication style, scripts, and a practical content roadmap.</p></div>
+<div class="step"><b>03</b><h3>Create</h3><p>Produce and edit content, design visuals, and maintain a consistent creative direction.</p></div>
+<div class="step"><b>04</b><h3>Optimise</h3><p>Review performance, identify opportunities, and improve the content strategy using real analytics.</p></div>
+</div></div></section>
+
+<section class="phil"><div class="wrap">
+<h2 class="rv"><span>Views get attention.</span><span>Value builds authority.</span><span>Trust builds brands.</span></h2>
+<p class="rv">We believe meaningful digital growth starts with a clear strategy. Every script, visual, and video should serve a purpose — communicate value, strengthen recognition, and build a lasting connection with the right audience.</p>
+</div></section>
+
+<section class="why"><div class="wrap">
+<h2 class="rv">Why Southface.ap</h2>
+<div class="grid" id="wy"></div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+<h2 class="rv">Your next chapter starts with a strategy.</h2>
+<div class="cgrid">
+<div class="rv">
+<p class="lead">Have a brand to build, an idea to communicate, or a digital presence to strengthen? Let’s discuss how we can bring your vision to life.</p>
+<div class="info"><b>Southface.ap</b>Founder: L. Mohammed Usman<br>Contact: <a href="tel:+919786999771">+91 97869 99771</a></div>
+<a class="btn p" href="https://wa.me/919786999771" target="_blank" rel="noopener">START A CONVERSATION ON WHATSAPP</a>
+</div>
+<div class="rv" style="--d:.15s">
+<h3 style="font-size:1.6rem;margin-bottom:1.5rem">Discuss your project</h3>
+<form id="f" novalidate>
+<label>Name<input name="name" autocomplete="name" required><span class="err"></span></label>
+<label>Business or personal brand<input name="brand" required><span class="err"></span></label>
+<label>Required service<select name="service" required><option value="">Choose a service</option></select><span class="err"></span></label>
+<label>Project goals<textarea name="goals" rows="3" required></textarea><span class="err"></span></label>
+<label>Contact details (phone or email)<input name="contact" autocomplete="tel" required><span class="err"></span></label>
+<button class="btn p" type="submit">DISCUSS YOUR PROJECT</button>
+</form>
+<div id="ok" role="status" tabindex="-1">Thank you. Your enquiry is ready — WhatsApp should open with your details filled in. If it didn’t, <a id="wl" href="#" target="_blank" rel="noopener">send it here</a>.</div>
+</div></div></div></section>
+</main>
+<footer><div class="wrap">© <span id="yr"></span> Southface.ap · Tamil Nadu, India</div></footer>
+
+<script>
+// ===== Replace these with real work. Remove placeholder:true once a project is real. =====
+var PROJECTS=[
+{title:"Founder Identity System",cat:"Personal Branding",desc:"Placeholder: positioning, voice and visual identity for a founder-led brand.",hue:38,r:"4/5",placeholder:true,link:"#contact"},
+{title:"Cinematic Reel Series",cat:"Cinematic Reels",desc:"Placeholder: short-form cinematic edits built around a single idea.",hue:28,r:"16/11",placeholder:true,link:"#contact"},
+{title:"Script Framework",cat:"Scriptwriting",desc:"Placeholder: hooks, structure and storytelling for educational video.",hue:45,r:"1/1",placeholder:true,link:"#contact"},
+{title:"Launch Campaign",cat:"Social Media Campaigns",desc:"Placeholder: a multi-platform campaign with one creative direction.",hue:33,r:"4/5",placeholder:true,link:"#contact"},
+{title:"Thumbnail & Template Kit",cat:"Graphic Design",desc:"Placeholder: branded templates and thumbnails for consistent publishing.",hue:40,r:"16/11",placeholder:true,link:"#contact"},
+{title:"Podcast Clip Pack",cat:"Podcast Content",desc:"Placeholder: long-form conversations cut into short, shareable clips.",hue:30,r:"1/1",placeholder:true,link:"#contact"},
+{title:"Brand Strategy Deck",cat:"Brand Strategy",desc:"Placeholder: audience, positioning and content pillars in one document.",hue:42,r:"4/5",placeholder:true,link:"#contact"},
+{title:"90-Day Content Plan",cat:"Content Planning",desc:"Placeholder: a practical publishing roadmap with platform-specific formats.",hue:36,r:"16/11",placeholder:true,link:"#contact"}
+];
+var SERVICES=[
+["Personal Branding","Build a recognisable digital identity around expertise, personality, values, and professional positioning.","M12 3a4 4 0 100 8 4 4 0 000-8zM4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"],
+["Content Strategy & Planning","Develop content pillars, audience research, publishing plans, positioning, and platform-specific strategies.","M3 5h18M3 12h12M3 19h7M19 14l2 2-4 4"],
+["Scriptwriting & Storytelling","Create compelling hooks, structured scripts, educational content, storytelling frameworks, and video concepts.","M5 3h11l3 3v15H5zM8 10h8M8 14h8M8 18h5"],
+["Video Editing & Creative Production","Produce polished short-form videos, Instagram Reels, YouTube videos, podcast clips, cinematic edits, and branded visual content.","M3 6h13v12H3zM16 10l5-3v10l-5-3"],
+["Strategy Consulting","Identify content opportunities, evaluate digital positioning, improve content systems, and align creative execution with business goals.","M12 2v4M12 18v4M2 12h4M18 12h4M12 8a4 4 0 100 8 4 4 0 000-8z"],
+["Graphic Design & Brand Identity","Create professional social media graphics, thumbnails, campaign creatives, branded templates, and visual identities.","M12 3l9 9-9 9-9-9zM12 8l4 4-4 4-4-4z"],
+["Social Media Management","Support content calendars, publishing workflows, platform management, audience engagement, and performance reporting.","M4 5h16v12H9l-5 4zM8 9h8M8 13h5"],
+["Content Performance Analysis","Use platform analytics and AI-assisted analysis to identify patterns, evaluate content performance, and recommend improvements.","M4 20V10M10 20V4M16 20v-8M22 20H2"],
+["Digital Growth Consulting","Help founders, entrepreneurs, professionals, and businesses develop a clearer online positioning and content-led growth approach.","M3 17l6-6 4 4 8-9M15 6h6v6"]];
+var WHY=["Strategy Before Execution","Content With a Clear Purpose","Strong Storytelling","Consistent Brand Identity","Creative Quality","Data-Informed Improvements"];
+var WHYD=["We define positioning and audience before a single frame is shot.","Every script and visual has a job: inform, build recognition, or earn trust.","Clear hooks and structure that make expertise easy to follow.","One visual and verbal system across every platform.","Careful editing, design and finishing on everything we publish.","Real analytics guide what we keep, change or drop."];
+var WA="919786999771";
+var $=function(s,r){return(r||document).querySelector(s)};
+var calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+// build
+$("#sv").innerHTML=SERVICES.map(function(s,i){return '<article class="card rv" style="--d:'+(i%3)*.1+'s;--g:hsl('+(30+i*4)+' 45% '+(18+i%3*3)+'%)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+s[2]+'"/></svg><span class="n">0'+(i+1)+'</span><h3>'+s[0].replace("&","&amp;")+'</h3><p>'+s[1]+'</p></article>'}).join("");
+$("#wy").innerHTML=WHY.map(function(w,i){return '<article class="card rv" style="--d:'+(i%3)*.1+'s"><h3>'+w+'</h3><p>'+WHYD[i]+'</p></article>'}).join("");
+var sel=$("select[name=service]");SERVICES.forEach(function(s){var o=document.createElement("option");o.textContent=s[0];sel.appendChild(o)});
+$("#yr").textContent=new Date().getFullYear();
+
+// work gallery
+function art(p,i){var h=p.hue;return '<svg class="a" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="w'+i+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl('+h+' 40% 22%)"/><stop offset="1" stop-color="#0a0a0b"/></linearGradient></defs><rect width="400" height="500" fill="url(#w'+i+')"/><circle cx="'+(120+i*30)+'" cy="170" r="90" fill="none" stroke="hsl('+h+' 50% 65%)" stroke-opacity=".5"/><circle cx="'+(120+i*30)+'" cy="170" r="48" fill="hsl('+h+' 50% 65%)" fill-opacity=".12"/><path d="M0 '+(380-i*8)+'Q200 '+(300+i*10)+' 400 '+(390-i*6)+'V500H0z" fill="#0a0a0b" fill-opacity=".6"/></svg>'}
+function show(cat){
+$("#wk").innerHTML=PROJECTS.map(function(p,i){if(cat!=="All"&&p.cat!==cat)return"";
+var vis=p.img?'<img src="'+p.img+'" alt="'+p.title+'" loading="lazy" style="width:100%;height:100%;object-fit:cover">':art(p,i);
+return '<article class="work"><div class="art" style="--r:'+p.r+'">'+vis+'</div>'+(p.placeholder?'<span class="tag">Placeholder</span>':'')+'<div class="t"><span class="c">'+p.cat+'</span><h3>'+p.title+'</h3><p>'+p.desc+'</p><a href="'+(p.link||"#contact")+'">'+(p.placeholder?"Request a case study":"View project")+'</a></div></article>'}).join("");
+document.querySelectorAll("#flt button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.c===cat)});hover()}
+var cats=["All"].concat(PROJECTS.map(function(p){return p.cat}).filter(function(c,i,a){return a.indexOf(c)===i}));
+$("#flt").innerHTML=cats.map(function(c){return '<button data-c="'+c+'">'+c+'</button>'}).join("");
+$("#flt").onclick=function(e){if(e.target.dataset.c)show(e.target.dataset.c)};show("All");
+
+// hero headline stagger
+$("#h1").innerHTML=$("#h1").textContent.split(" ").map(function(w,i){return '<span style="animation-delay:'+(1.1+i*.09)+'s">'+w+'&nbsp;</span>'}).join("");
+
+// loader
+addEventListener("load",function(){setTimeout(function(){$("#load").classList.add("done")},calm?0:1000)});
+setTimeout(function(){$("#load").classList.add("done")},2500);
+
+// nav
+var lk=$("#links"),bg=$(".burger");
+bg.onclick=function(){var o=lk.classList.toggle("open");bg.setAttribute("aria-expanded",o);bg.textContent=o?"Close":"Menu"};
+lk.onclick=function(e){if(e.target.tagName==="A"){lk.classList.remove("open");bg.setAttribute("aria-expanded",false);bg.textContent="Menu"}};
+
+// reveal + process line
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+new IntersectionObserver(function(es){if(es[0].isIntersecting)$("#st").style.setProperty("--p","100%")},{threshold:.4}).observe($("#st"));
+
+// parallax lens
+var lens=$("#lens");
+if(!calm)addEventListener("scroll",function(){if(scrollY<innerHeight)lens.style.transform="translateY("+scrollY*.12+"px) rotate("+scrollY*.03+"deg)"},{passive:true});
+
+// particles (light, only while hero is visible)
+(function(){var c=$("#fx"),x=c.getContext("2d"),P=[],on=true;if(calm)return;
+function rs(){c.width=c.offsetWidth;c.height=c.offsetHeight}rs();addEventListener("resize",rs);
+for(var i=0;i<(innerWidth<700?24:48);i++)P.push({x:Math.random(),y:Math.random(),r:Math.random()*1.6+.3,s:Math.random()*.0004+.0001});
+new IntersectionObserver(function(e){on=e[0].isIntersecting;if(on)f()}).observe(c);
+function f(){if(!on)return;x.clearRect(0,0,c.width,c.height);x.fillStyle="#d4b483";P.forEach(function(p){p.y-=p.s;if(p.y<0)p.y=1;x.globalAlpha=.25+p.r/4;x.beginPath();x.arc(p.x*c.width,p.y*c.height,p.r,0,7);x.fill()});requestAnimationFrame(f)}f()})();
+
+// cursor
+var cur=$("#cur");
+function hover(){document.querySelectorAll("a,button,.card,.work").forEach(function(el){el.onmouseenter=function(){cur.classList.add("h")};el.onmouseleave=function(){cur.classList.remove("h")}})}
+if(matchMedia("(pointer:fine)").matches&&!calm){addEventListener("mousemove",function(e){cur.style.opacity=1;cur.style.left=e.clientX+"px";cur.style.top=e.clientY+"px"});hover()}
+
+// form: validated; WhatsApp fallback unless FORM_ENDPOINT is set
+var FORM_ENDPOINT="";
+$("#f").addEventListener("submit",function(e){e.preventDefault();var f=e.target,bad=false,d={};
+Array.prototype.forEach.call(f.elements,function(el){if(!el.name)return;var v=el.value.trim(),m="";d[el.name]=v;
+if(!v)m="Please fill in this field.";
+else if(el.name==="contact"&&!(/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)||v.replace(/\D/g,"").length>=8))m="Enter a valid phone number or email.";
+el.parentNode.querySelector(".err").textContent=m;el.setAttribute("aria-invalid",!!m);if(m&&!bad){bad=true;el.focus()}});
+if(bad)return;
+var msg="Hello Southface.ap, I’d like to discuss a project.\nName: "+d.name+"\nBrand: "+d.brand+"\nService: "+d.service+"\nGoals: "+d.goals+"\nContact: "+d.contact;
+var url="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+if(FORM_ENDPOINT)fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)}).catch(function(){});
+$("#wl").href=url;f.style.display="none";var ok=$("#ok");ok.style.display="block";ok.focus();open(url,"_blank","noopener")});
+</script>
+</body>
+</html>
